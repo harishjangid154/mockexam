@@ -14,6 +14,7 @@ type ExamState = {
   clearAnswer: (testId: string, questionId: string) => void;
   markReview: (testId: string, questionId: string) => void;
   unmarkReview: (testId: string, questionId: string) => void;
+  toggleBookmark: (testId: string, questionId: string) => void;
   setRemainingSeconds: (testId: string, seconds: number) => void;
   submitTest: (testId: string) => void;
   resetTest: (testId: string) => void;
@@ -23,6 +24,7 @@ const emptyProgress = (test: ExamTest): TestProgress => ({
   testId: test.meta.id,
   answers: {},
   review: {},
+  bookmarks: {},
   visited: {},
   currentIndex: 0,
   remainingSeconds: test.meta.durationMinutes * 60,
@@ -121,6 +123,23 @@ export const useExamStore = create<ExamState>()(
             progressByTest: {
               ...state.progressByTest,
               [testId]: { ...progress, review },
+            },
+          };
+        }),
+      toggleBookmark: (testId, questionId) =>
+        set((state) => {
+          const progress = state.progressByTest[testId];
+          if (!progress || progress.submittedAt) return state;
+          const bookmarks = { ...(progress.bookmarks ?? {}) };
+          if (bookmarks[questionId]) {
+            delete bookmarks[questionId];
+          } else {
+            bookmarks[questionId] = true;
+          }
+          return {
+            progressByTest: {
+              ...state.progressByTest,
+              [testId]: { ...progress, bookmarks },
             },
           };
         }),

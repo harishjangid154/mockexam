@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "title": "Imported SSC Parser Sample",
+    "exam": "SSC CGL",
+    "language": "bilingual",
+    "totalQuestions": 2,
+    "durationInMinutes": 10
+  },
+  "questions": [
+    {
+      "id": 1,
+      "type": "mcq",
+      "subject": "Quantitative Aptitude",
+      "topic": "Percentage",
+      "difficulty": "Easy",
+      "questionEnglish": "If 25% of a number is 40, what is the number?",
+      "questionHindi": "यदि किसी संख्या का 25% 40 है, तो संख्या क्या है?",
+      "options": {
+        "A": "120",
+        "B": "140",
+        "C": "160",
+        "D": "180"
+      },
+      "correctAnswer": "C",
+      "explanation": "$40 \\times 4 = 160$",
+      "marks": 2,
+      "negativeMarks": 0.5
+    },
+    {
+      "id": 2,
+      "type": "mcq",
+      "subject": "General Awareness",
+      "topic": "Polity",
+      "difficulty": "Moderate",
+      "questionEnglish": "Which article is related to equality before law?",
+      "questionHindi": "कानून के समक्ष समानता किस अनुच्छेद से संबंधित है?",
+      "options": {
+        "A": "Article 12",
+        "B": "Article 14",
+        "C": "Article 19",
+        "D": "Article 21"
+      },
+      "correctAnswer": "B",
+      "explanation": "Article 14 provides equality before law.",
+      "marks": 2,
+      "negativeMarks": 0.5
+    }
+  ]
+}

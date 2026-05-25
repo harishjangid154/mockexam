@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowRight, CheckCircle2, Clock3, Eraser, Flag, Home, Languages, Send } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle2, Clock3, Eraser, Expand, Flag, Home, Languages, Send, Star } from "lucide-react";
 import { useCallback, useEffect, useMemo } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -31,6 +31,7 @@ export function ExamShell({ test }: { test: ExamTest }) {
   const clearAnswer = useExamStore((state) => state.clearAnswer);
   const markReview = useExamStore((state) => state.markReview);
   const unmarkReview = useExamStore((state) => state.unmarkReview);
+  const toggleBookmark = useExamStore((state) => state.toggleBookmark);
   const setRemainingSeconds = useExamStore((state) => state.setRemainingSeconds);
   const submitTest = useExamStore((state) => state.submitTest);
 
@@ -84,6 +85,7 @@ export function ExamShell({ test }: { test: ExamTest }) {
   const currentIndex = progress?.currentIndex ?? 0;
   const question = test.questions[currentIndex];
   const selectedOption = progress?.answers[question?.id ?? ""];
+  const isBookmarked = Boolean(progress?.bookmarks?.[question?.id ?? ""]);
 
   const counts = useMemo(() => {
     return test.questions.reduce(
@@ -111,6 +113,12 @@ export function ExamShell({ test }: { test: ExamTest }) {
   function submit() {
     submitTest(test.meta.id);
     router.push(`/tests/${test.meta.id}/result`);
+  }
+
+  async function enterFullscreen() {
+    if (!document.fullscreenElement) {
+      await document.documentElement.requestFullscreen().catch(() => undefined);
+    }
   }
 
   if (!progress || !question) {
@@ -143,6 +151,9 @@ export function ExamShell({ test }: { test: ExamTest }) {
             >
               <Languages className="h-4 w-4" />
               {language === "en" ? "English" : "Hindi"}
+            </Button>
+            <Button variant="outline" size="icon" onClick={enterFullscreen} aria-label="Enter fullscreen mode">
+              <Expand className="h-4 w-4" />
             </Button>
             <div className="flex h-10 items-center gap-2 rounded-md border bg-[hsl(var(--card))] px-3 font-mono text-sm">
               <Clock3 className="h-4 w-4 text-[hsl(var(--accent))]" />
@@ -240,6 +251,10 @@ export function ExamShell({ test }: { test: ExamTest }) {
             <Button variant="outline" onClick={() => markReview(test.meta.id, question.id)}>
               <Flag className="h-4 w-4" />
               Mark Review
+            </Button>
+            <Button variant={isBookmarked ? "secondary" : "outline"} onClick={() => toggleBookmark(test.meta.id, question.id)}>
+              <Star className="h-4 w-4" />
+              Bookmark
             </Button>
             <Button className="ml-auto" onClick={saveAndNext}>
               <CheckCircle2 className="h-4 w-4" />

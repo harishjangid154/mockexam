@@ -3,18 +3,36 @@
 import Link from "next/link";
 import type React from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft, BarChart3, CheckCircle2, Gauge, RotateCcw, Target, Timer, Trophy, XCircle } from "lucide-react";
+import { ArrowLeft, BarChart3, CheckCircle2, Gauge, RotateCcw, Star, Target, Timer, Trophy, XCircle } from "lucide-react";
+import { useEffect } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { calculateResult } from "@/lib/results";
 import type { ExamTest } from "@/lib/types";
 import { formatSeconds } from "@/lib/utils";
+import { useAttemptStore } from "@/store/attempt-store";
 import { useExamStore } from "@/stores/exam-store";
 
 export function ResultScreen({ test }: { test: ExamTest }) {
   const progress = useExamStore((state) => state.progressByTest[test.meta.id]);
   const resetTest = useExamStore((state) => state.resetTest);
+  const addAttempt = useAttemptStore((state) => state.addAttempt);
+
+  useEffect(() => {
+    if (!progress?.submittedAt) return;
+    const currentResult = calculateResult(test, progress);
+    void addAttempt({
+      id: `${test.meta.id}-${progress.submittedAt}`,
+      testId: test.meta.id,
+      testTitle: test.meta.title,
+      startedAt: progress.startedAt,
+      submittedAt: progress.submittedAt,
+      progress,
+      score: currentResult.score,
+      accuracy: currentResult.accuracy,
+    });
+  }, [addAttempt, progress, test]);
 
   if (!progress) {
     return (
@@ -35,6 +53,19 @@ export function ResultScreen({ test }: { test: ExamTest }) {
   }
 
   const result = calculateResult(test, progress);
+  const difficultyRows = Object.entries(
+    test.questions.reduce<Record<string, { total: number; correct: number; attempted: number }>>((acc, question) => {
+      const row = acc[question.difficulty] ?? { total: 0, correct: 0, attempted: 0 };
+      const answer = progress.answers[question.id];
+      acc[question.difficulty] = {
+        total: row.total + 1,
+        attempted: row.attempted + (answer ? 1 : 0),
+        correct: row.correct + (answer === question.correctOptionId ? 1 : 0),
+      };
+      return acc;
+    }, {}),
+  );
+  const strongTopics = result.topicWise.filter((topic) => topic.attempted > 0 && topic.accuracy >= 75).slice(0, 4);
 
   return (
     <main className="mx-auto flex min-h-screen w-full max-w-7xl flex-col gap-6 px-4 py-6 sm:px-6 lg:px-8">
@@ -119,6 +150,77 @@ export function ResultScreen({ test }: { test: ExamTest }) {
           </CardContent>
         </Card>
       </section>
+
+      <section className="grid gap-5 lg:grid-cols-2">
+        <Card>
+          <CardHeader>
+            <CardTitle>Strong Topics</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            {strongTopics.length ? (
+              strongTopics.map((topic) => (
+                <div key={topic.topic} className="rounded-md border bg-[hsl(var(--primary))]/10 p-3">
+                  <div className="font-medium">{topic.topic}</div>
+                  <div className="text-sm text-[hsl(var(--muted-foreground))]">{topic.accuracy}% accuracy</div>
+                </div>
+              ))
+            ) : (
+              <p className="text-sm text-[hsl(var(--muted-foreground))]">Score 75%+ in a topic to mark it strong.</p>
+            )}
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Difficulty Analysis</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            {difficultyRows.map(([difficulty, stats]) => {
+              const accuracy = stats.attempted ? Math.round((stats.correct / stats.attempted) * 100) : 0;
+              return (
+                <div key={difficulty} className="space-y-2">
+                  <div className="flex justify-between text-sm">
+                    <span>{difficulty}</span>
+                    <span className="text-[hsl(var(--muted-foreground))]">{accuracy}%</span>
+                  </div>
+                  <div className="h-2 overflow-hidden rounded-full bg-[hsl(var(--secondary))]">
+                    <div className="h-full rounded-full bg-[hsl(var(--accent))]" style={{ width: `${accuracy}%` }} />
+                  </div>
+                </div>
+              );
+            })}
+          </CardContent>
+        </Card>
+      </section>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Question Review</CardTitle>
+        </CardHeader>
+        <CardContent className="grid gap-3 md:grid-cols-2">
+          {test.questions.map((question, index) => {
+            const answer = progress.answers[question.id];
+            const correct = answer === question.correctOptionId;
+            return (
+              <div key={question.id} className="rounded-md border bg-[hsl(var(--secondary))]/30 p-3">
+                <div className="mb-2 flex items-center justify-between gap-2">
+                  <Badge>Q{index + 1}</Badge>
+                  <div className="flex items-center gap-2">
+                    {progress.bookmarks?.[question.id] ? <Star className="h-4 w-4 text-[hsl(var(--accent))]" /> : null}
+                    <Badge className={correct ? "text-[hsl(var(--primary))]" : "text-[hsl(var(--destructive))]"}>
+                      {answer ? (correct ? "Correct" : "Wrong") : "Skipped"}
+                    </Badge>
+                  </div>
+                </div>
+                <div className="line-clamp-2 text-sm">{question.question.en}</div>
+                <div className="mt-2 text-xs text-[hsl(var(--muted-foreground))]">
+                  Your answer: {answer ?? "Not attempted"} · Correct: {question.correctOptionId}
+                </div>
+              </div>
+            );
+          })}
+        </CardContent>
+      </Card>
     </main>
   );
 }

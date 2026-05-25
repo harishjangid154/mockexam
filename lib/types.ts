@@ -45,6 +45,7 @@ export type TestProgress = {
   testId: string;
   answers: Record<string, string | undefined>;
   review: Record<string, boolean>;
+  bookmarks?: Record<string, boolean>;
   visited: Record<string, boolean>;
   currentIndex: number;
   remainingSeconds: number;

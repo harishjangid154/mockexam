@@ -8,6 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "SSC Mock Test Platform",
   description: "A modern bilingual SSC online examination experience.",
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({
