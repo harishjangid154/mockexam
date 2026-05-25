@@ -1,0 +1,149 @@
+{
+  "meta": {
+    "id": "ssc-chsl-sample",
+    "title": "SSC CHSL Tier I Practice Set",
+    "exam": "SSC CHSL",
+    "durationMinutes": 45,
+    "difficulty": "Easy",
+    "totalQuestions": 8,
+    "marksPerQuestion": 2,
+    "negativeMarks": 0.5,
+    "subjects": [
+      { "name": "Reasoning", "questions": 2 },
+      { "name": "Mathematics", "questions": 2 },
+      { "name": "English", "questions": 2 },
+      { "name": "GK", "questions": 2 }
+    ]
+  },
+  "questions": [
+    {
+      "id": "chsl-q1",
+      "subject": "Reasoning",
+      "topic": "Classification",
+      "difficulty": "Easy",
+      "question": { "en": "Choose the odd one out.", "hi": "असंगत विकल्प चुनें।" },
+      "options": [
+        { "id": "A", "text": { "en": "Square", "hi": "वर्ग" } },
+        { "id": "B", "text": { "en": "Triangle", "hi": "त्रिभुज" } },
+        { "id": "C", "text": { "en": "Circle", "hi": "वृत्त" } },
+        { "id": "D", "text": { "en": "Cube", "hi": "घन" } }
+      ],
+      "correctOptionId": "D",
+      "explanation": { "en": "Cube is a three-dimensional shape.", "hi": "घन त्रि-आयामी आकृति है।" }
+    },
+    {
+      "id": "chsl-q2",
+      "subject": "Reasoning",
+      "topic": "Direction Sense",
+      "difficulty": "Easy",
+      "question": {
+        "en": "A man walks 5 km east, then 3 km north. In which direction is he from the starting point?",
+        "hi": "एक व्यक्ति 5 किमी पूर्व और फिर 3 किमी उत्तर चलता है। वह प्रारंभिक बिंदु से किस दिशा में है?"
+      },
+      "options": [
+        { "id": "A", "text": { "en": "North-East", "hi": "उत्तर-पूर्व" } },
+        { "id": "B", "text": { "en": "South-East", "hi": "दक्षिण-पूर्व" } },
+        { "id": "C", "text": { "en": "North-West", "hi": "उत्तर-पश्चिम" } },
+        { "id": "D", "text": { "en": "East only", "hi": "केवल पूर्व" } }
+      ],
+      "correctOptionId": "A",
+      "explanation": { "en": "He is east and north of the start.", "hi": "वह प्रारंभिक बिंदु से पूर्व और उत्तर में है।" }
+    },
+    {
+      "id": "chsl-q3",
+      "subject": "Mathematics",
+      "topic": "Average",
+      "difficulty": "Easy",
+      "question": {
+        "en": "The average of 10, 20, 30 and 40 is:",
+        "hi": "10, 20, 30 और 40 का औसत है:"
+      },
+      "options": [
+        { "id": "A", "text": { "en": "20", "hi": "20" } },
+        { "id": "B", "text": { "en": "25", "hi": "25" } },
+        { "id": "C", "text": { "en": "30", "hi": "30" } },
+        { "id": "D", "text": { "en": "35", "hi": "35" } }
+      ],
+      "correctOptionId": "B",
+      "explanation": { "en": "Average is $\\frac{10+20+30+40}{4}=25$.", "hi": "औसत $\\frac{10+20+30+40}{4}=25$ है।" }
+    },
+    {
+      "id": "chsl-q4",
+      "subject": "Mathematics",
+      "topic": "Ratio",
+      "difficulty": "Easy",
+      "question": {
+        "en": "If $a:b = 2:3$ and $b:c = 4:5$, then $a:c$ is:",
+        "hi": "यदि $a:b = 2:3$ और $b:c = 4:5$, तो $a:c$ है:"
+      },
+      "options": [
+        { "id": "A", "text": { "en": "8:15", "hi": "8:15" } },
+        { "id": "B", "text": { "en": "2:5", "hi": "2:5" } },
+        { "id": "C", "text": { "en": "4:9", "hi": "4:9" } },
+        { "id": "D", "text": { "en": "6:20", "hi": "6:20" } }
+      ],
+      "correctOptionId": "A",
+      "explanation": { "en": "Make b equal: $a:b=8:12$ and $b:c=12:15$, so $a:c=8:15$.", "hi": "b को समान करें: $a:b=8:12$ और $b:c=12:15$, अतः $a:c=8:15$।" }
+    },
+    {
+      "id": "chsl-q5",
+      "subject": "English",
+      "topic": "Vocabulary",
+      "difficulty": "Easy",
+      "question": { "en": "Choose the antonym of Ancient.", "hi": "Ancient का विलोम चुनें।" },
+      "options": [
+        { "id": "A", "text": { "en": "Old", "hi": "पुराना" } },
+        { "id": "B", "text": { "en": "Modern", "hi": "आधुनिक" } },
+        { "id": "C", "text": { "en": "Historic", "hi": "ऐतिहासिक" } },
+        { "id": "D", "text": { "en": "Primitive", "hi": "प्राचीन" } }
+      ],
+      "correctOptionId": "B",
+      "explanation": { "en": "Modern is the opposite of Ancient.", "hi": "Modern, Ancient का विलोम है।" }
+    },
+    {
+      "id": "chsl-q6",
+      "subject": "English",
+      "topic": "Sentence Improvement",
+      "difficulty": "Moderate",
+      "question": { "en": "He is senior than me. Choose the correction.", "hi": "He is senior than me. सही सुधार चुनें।" },
+      "options": [
+        { "id": "A", "text": { "en": "senior to me", "hi": "senior to me" } },
+        { "id": "B", "text": { "en": "senior from me", "hi": "senior from me" } },
+        { "id": "C", "text": { "en": "senior over me", "hi": "senior over me" } },
+        { "id": "D", "text": { "en": "No improvement", "hi": "कोई सुधार नहीं" } }
+      ],
+      "correctOptionId": "A",
+      "explanation": { "en": "The correct phrase is senior to.", "hi": "सही वाक्यांश senior to है।" }
+    },
+    {
+      "id": "chsl-q7",
+      "subject": "GK",
+      "topic": "History",
+      "difficulty": "Easy",
+      "question": { "en": "The Battle of Plassey was fought in which year?", "hi": "प्लासी का युद्ध किस वर्ष लड़ा गया था?" },
+      "options": [
+        { "id": "A", "text": { "en": "1757", "hi": "1757" } },
+        { "id": "B", "text": { "en": "1764", "hi": "1764" } },
+        { "id": "C", "text": { "en": "1857", "hi": "1857" } },
+        { "id": "D", "text": { "en": "1947", "hi": "1947" } }
+      ],
+      "correctOptionId": "A",
+      "explanation": { "en": "The Battle of Plassey was fought in 1757.", "hi": "प्लासी का युद्ध 1757 में लड़ा गया था।" }
+    },
+    {
+      "id": "chsl-q8",
+      "subject": "GK",
+      "topic": "Computer",
+      "difficulty": "Easy",
+      "question": { "en": "CPU stands for:", "hi": "CPU का पूर्ण रूप है:" },
+      "options": [
+        { "id": "A", "text": { "en": "Central Processing Unit", "hi": "Central Processing Unit" } },
+        { "id": "B", "text": { "en": "Computer Personal Unit", "hi": "Computer Personal Unit" } },
+        { "id": "C", "text": { "en": "Central Program Utility", "hi": "Central Program Utility" } },
+        { "id": "D", "text": { "en": "Control Processing User", "hi": "Control Processing User" } }
+      ],
+      "correctOptionId": "A",
+      "explanation": { "en": "CPU means Central Processing Unit.", "hi": "CPU का अर्थ Central Processing Unit है।" }
+    }
+  ]
+}

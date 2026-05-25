@@ -1,0 +1,272 @@
+{
+  "meta": {
+    "id": "ssc-cgl-tier1-sample",
+    "title": "SSC CGL Tier I Mock Test",
+    "exam": "SSC CGL",
+    "durationMinutes": 60,
+    "difficulty": "Moderate",
+    "totalQuestions": 12,
+    "marksPerQuestion": 2,
+    "negativeMarks": 0.5,
+    "subjects": [
+      { "name": "General Intelligence", "questions": 3 },
+      { "name": "Quantitative Aptitude", "questions": 3 },
+      { "name": "English Language", "questions": 3 },
+      { "name": "General Awareness", "questions": 3 }
+    ]
+  },
+  "questions": [
+    {
+      "id": "cgl-q1",
+      "subject": "General Intelligence",
+      "topic": "Analogy",
+      "difficulty": "Easy",
+      "question": {
+        "en": "Select the option that is related to Book in the same way as Hospital is related to Doctor.",
+        "hi": "उस विकल्प का चयन करें जो पुस्तक से उसी प्रकार संबंधित है जिस प्रकार अस्पताल डॉक्टर से संबंधित है।"
+      },
+      "options": [
+        { "id": "A", "text": { "en": "Author", "hi": "लेखक" } },
+        { "id": "B", "text": { "en": "Reader", "hi": "पाठक" } },
+        { "id": "C", "text": { "en": "Library", "hi": "पुस्तकालय" } },
+        { "id": "D", "text": { "en": "Printer", "hi": "मुद्रक" } }
+      ],
+      "correctOptionId": "A",
+      "explanation": {
+        "en": "A doctor works in a hospital; an author creates a book.",
+        "hi": "डॉक्टर अस्पताल में काम करता है; लेखक पुस्तक बनाता है।"
+      }
+    },
+    {
+      "id": "cgl-q2",
+      "subject": "General Intelligence",
+      "topic": "Series",
+      "difficulty": "Moderate",
+      "question": {
+        "en": "Find the missing number in the series: 3, 8, 15, 24, 35, ?",
+        "hi": "श्रृंखला में लुप्त संख्या ज्ञात करें: 3, 8, 15, 24, 35, ?"
+      },
+      "options": [
+        { "id": "A", "text": { "en": "46", "hi": "46" } },
+        { "id": "B", "text": { "en": "48", "hi": "48" } },
+        { "id": "C", "text": { "en": "49", "hi": "49" } },
+        { "id": "D", "text": { "en": "52", "hi": "52" } }
+      ],
+      "correctOptionId": "B",
+      "explanation": {
+        "en": "Differences are 5, 7, 9, 11, so next difference is 13. Therefore 35 + 13 = 48.",
+        "hi": "अंतर 5, 7, 9, 11 हैं, अगला अंतर 13 होगा। अतः 35 + 13 = 48।"
+      }
+    },
+    {
+      "id": "cgl-q3",
+      "subject": "General Intelligence",
+      "topic": "Coding Decoding",
+      "difficulty": "Moderate",
+      "question": {
+        "en": "If DELHI is coded as EFMII, how will PATNA be coded?",
+        "hi": "यदि DELHI को EFMII लिखा जाता है, तो PATNA को कैसे लिखा जाएगा?"
+      },
+      "options": [
+        { "id": "A", "text": { "en": "QBUOB", "hi": "QBUOB" } },
+        { "id": "B", "text": { "en": "QASOB", "hi": "QASOB" } },
+        { "id": "C", "text": { "en": "OBSMZ", "hi": "OBSMZ" } },
+        { "id": "D", "text": { "en": "QBUMB", "hi": "QBUMB" } }
+      ],
+      "correctOptionId": "A",
+      "explanation": {
+        "en": "Each letter moves one step forward in the alphabet.",
+        "hi": "प्रत्येक अक्षर वर्णमाला में एक स्थान आगे बढ़ता है।"
+      }
+    },
+    {
+      "id": "cgl-q4",
+      "subject": "Quantitative Aptitude",
+      "topic": "Percentage",
+      "difficulty": "Easy",
+      "question": {
+        "en": "A number is increased by 20% and then decreased by 20%. What is the net percentage change?",
+        "hi": "किसी संख्या में 20% वृद्धि और फिर 20% कमी की जाती है। कुल प्रतिशत परिवर्तन क्या होगा?"
+      },
+      "options": [
+        { "id": "A", "text": { "en": "No change", "hi": "कोई परिवर्तन नहीं" } },
+        { "id": "B", "text": { "en": "4% decrease", "hi": "4% कमी" } },
+        { "id": "C", "text": { "en": "4% increase", "hi": "4% वृद्धि" } },
+        { "id": "D", "text": { "en": "2% decrease", "hi": "2% कमी" } }
+      ],
+      "correctOptionId": "B",
+      "explanation": {
+        "en": "Net change is $x + y + \\frac{xy}{100} = 20 - 20 - 4 = -4\\%$.",
+        "hi": "कुल परिवर्तन $x + y + \\frac{xy}{100} = 20 - 20 - 4 = -4\\%$ है।"
+      }
+    },
+    {
+      "id": "cgl-q5",
+      "subject": "Quantitative Aptitude",
+      "topic": "Algebra",
+      "difficulty": "Moderate",
+      "question": {
+        "en": "If $x + \\frac{1}{x} = 5$, find $x^2 + \\frac{1}{x^2}$.",
+        "hi": "यदि $x + \\frac{1}{x} = 5$ है, तो $x^2 + \\frac{1}{x^2}$ ज्ञात करें।"
+      },
+      "options": [
+        { "id": "A", "text": { "en": "21", "hi": "21" } },
+        { "id": "B", "text": { "en": "23", "hi": "23" } },
+        { "id": "C", "text": { "en": "25", "hi": "25" } },
+        { "id": "D", "text": { "en": "27", "hi": "27" } }
+      ],
+      "correctOptionId": "B",
+      "explanation": {
+        "en": "Squaring gives $x^2 + 2 + \\frac{1}{x^2} = 25$, so the answer is 23.",
+        "hi": "वर्ग करने पर $x^2 + 2 + \\frac{1}{x^2} = 25$, अतः उत्तर 23 है।"
+      }
+    },
+    {
+      "id": "cgl-q6",
+      "subject": "Quantitative Aptitude",
+      "topic": "Time and Work",
+      "difficulty": "Hard",
+      "question": {
+        "en": "A can finish a work in 12 days and B in 18 days. Working together, how many days will they take?",
+        "hi": "A किसी कार्य को 12 दिनों में और B 18 दिनों में पूरा कर सकता है। साथ मिलकर वे कितने दिनों में कार्य पूरा करेंगे?"
+      },
+      "options": [
+        { "id": "A", "text": { "en": "$7\\frac{1}{5}$ days", "hi": "$7\\frac{1}{5}$ दिन" } },
+        { "id": "B", "text": { "en": "$7\\frac{2}{5}$ days", "hi": "$7\\frac{2}{5}$ दिन" } },
+        { "id": "C", "text": { "en": "8 days", "hi": "8 दिन" } },
+        { "id": "D", "text": { "en": "9 days", "hi": "9 दिन" } }
+      ],
+      "correctOptionId": "A",
+      "explanation": {
+        "en": "Combined rate is $\\frac{1}{12}+\\frac{1}{18}=\\frac{5}{36}$, so time is $\\frac{36}{5}=7\\frac{1}{5}$ days.",
+        "hi": "संयुक्त दर $\\frac{1}{12}+\\frac{1}{18}=\\frac{5}{36}$ है, अतः समय $\\frac{36}{5}=7\\frac{1}{5}$ दिन है।"
+      }
+    },
+    {
+      "id": "cgl-q7",
+      "subject": "English Language",
+      "topic": "Synonyms",
+      "difficulty": "Easy",
+      "question": {
+        "en": "Choose the synonym of Meticulous.",
+        "hi": "Meticulous का समानार्थी शब्द चुनें।"
+      },
+      "options": [
+        { "id": "A", "text": { "en": "Careless", "hi": "लापरवाह" } },
+        { "id": "B", "text": { "en": "Precise", "hi": "सटीक" } },
+        { "id": "C", "text": { "en": "Rapid", "hi": "तीव्र" } },
+        { "id": "D", "text": { "en": "Ordinary", "hi": "साधारण" } }
+      ],
+      "correctOptionId": "B",
+      "explanation": {
+        "en": "Meticulous means showing great attention to detail.",
+        "hi": "Meticulous का अर्थ है विवरण पर बहुत ध्यान देने वाला।"
+      }
+    },
+    {
+      "id": "cgl-q8",
+      "subject": "English Language",
+      "topic": "Grammar",
+      "difficulty": "Moderate",
+      "question": {
+        "en": "Select the correctly spelled word.",
+        "hi": "सही वर्तनी वाला शब्द चुनें।"
+      },
+      "options": [
+        { "id": "A", "text": { "en": "Accomodate", "hi": "Accomodate" } },
+        { "id": "B", "text": { "en": "Acommodate", "hi": "Acommodate" } },
+        { "id": "C", "text": { "en": "Accommodate", "hi": "Accommodate" } },
+        { "id": "D", "text": { "en": "Acomodate", "hi": "Acomodate" } }
+      ],
+      "correctOptionId": "C",
+      "explanation": {
+        "en": "The correct spelling is Accommodate.",
+        "hi": "सही वर्तनी Accommodate है।"
+      }
+    },
+    {
+      "id": "cgl-q9",
+      "subject": "English Language",
+      "topic": "Idioms",
+      "difficulty": "Moderate",
+      "question": {
+        "en": "What does the idiom 'break the ice' mean?",
+        "hi": "'break the ice' मुहावरे का अर्थ क्या है?"
+      },
+      "options": [
+        { "id": "A", "text": { "en": "Start a conversation", "hi": "बातचीत शुरू करना" } },
+        { "id": "B", "text": { "en": "End a dispute", "hi": "विवाद समाप्त करना" } },
+        { "id": "C", "text": { "en": "Destroy evidence", "hi": "सबूत नष्ट करना" } },
+        { "id": "D", "text": { "en": "Avoid danger", "hi": "खतरे से बचना" } }
+      ],
+      "correctOptionId": "A",
+      "explanation": {
+        "en": "It means to make people feel more relaxed and start interaction.",
+        "hi": "इसका अर्थ है लोगों को सहज बनाकर बातचीत शुरू करना।"
+      }
+    },
+    {
+      "id": "cgl-q10",
+      "subject": "General Awareness",
+      "topic": "Polity",
+      "difficulty": "Easy",
+      "question": {
+        "en": "Who is known as the Father of the Indian Constitution?",
+        "hi": "भारतीय संविधान के जनक के रूप में किसे जाना जाता है?"
+      },
+      "options": [
+        { "id": "A", "text": { "en": "Mahatma Gandhi", "hi": "महात्मा गांधी" } },
+        { "id": "B", "text": { "en": "B. R. Ambedkar", "hi": "बी. आर. अम्बेडकर" } },
+        { "id": "C", "text": { "en": "Jawaharlal Nehru", "hi": "जवाहरलाल नेहरू" } },
+        { "id": "D", "text": { "en": "Sardar Patel", "hi": "सरदार पटेल" } }
+      ],
+      "correctOptionId": "B",
+      "explanation": {
+        "en": "B. R. Ambedkar chaired the Drafting Committee of the Constitution.",
+        "hi": "बी. आर. अम्बेडकर संविधान की प्रारूप समिति के अध्यक्ष थे।"
+      }
+    },
+    {
+      "id": "cgl-q11",
+      "subject": "General Awareness",
+      "topic": "Science",
+      "difficulty": "Moderate",
+      "question": {
+        "en": "Which gas is commonly known as laughing gas?",
+        "hi": "किस गैस को सामान्यतः हँसाने वाली गैस कहा जाता है?"
+      },
+      "options": [
+        { "id": "A", "text": { "en": "Nitric oxide", "hi": "नाइट्रिक ऑक्साइड" } },
+        { "id": "B", "text": { "en": "Nitrous oxide", "hi": "नाइट्रस ऑक्साइड" } },
+        { "id": "C", "text": { "en": "Carbon monoxide", "hi": "कार्बन मोनोऑक्साइड" } },
+        { "id": "D", "text": { "en": "Sulphur dioxide", "hi": "सल्फर डाइऑक्साइड" } }
+      ],
+      "correctOptionId": "B",
+      "explanation": {
+        "en": "Nitrous oxide is commonly called laughing gas.",
+        "hi": "नाइट्रस ऑक्साइड को हँसाने वाली गैस कहा जाता है।"
+      }
+    },
+    {
+      "id": "cgl-q12",
+      "subject": "General Awareness",
+      "topic": "Geography",
+      "difficulty": "Moderate",
+      "question": {
+        "en": "Which river is called the Dakshin Ganga?",
+        "hi": "किस नदी को दक्षिण गंगा कहा जाता है?"
+      },
+      "options": [
+        { "id": "A", "text": { "en": "Krishna", "hi": "कृष्णा" } },
+        { "id": "B", "text": { "en": "Kaveri", "hi": "कावेरी" } },
+        { "id": "C", "text": { "en": "Godavari", "hi": "गोदावरी" } },
+        { "id": "D", "text": { "en": "Narmada", "hi": "नर्मदा" } }
+      ],
+      "correctOptionId": "C",
+      "explanation": {
+        "en": "The Godavari is often called Dakshin Ganga.",
+        "hi": "गोदावरी को अक्सर दक्षिण गंगा कहा जाता है।"
+      }
+    }
+  ]
+}

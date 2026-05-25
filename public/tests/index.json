@@ -1,0 +1,34 @@
+[
+  {
+    "id": "ssc-cgl-tier1-sample",
+    "title": "SSC CGL Tier I Mock Test",
+    "exam": "SSC CGL",
+    "durationMinutes": 60,
+    "difficulty": "Moderate",
+    "totalQuestions": 12,
+    "marksPerQuestion": 2,
+    "negativeMarks": 0.5,
+    "subjects": [
+      { "name": "General Intelligence", "questions": 3 },
+      { "name": "Quantitative Aptitude", "questions": 3 },
+      { "name": "English Language", "questions": 3 },
+      { "name": "General Awareness", "questions": 3 }
+    ]
+  },
+  {
+    "id": "ssc-chsl-sample",
+    "title": "SSC CHSL Tier I Practice Set",
+    "exam": "SSC CHSL",
+    "durationMinutes": 45,
+    "difficulty": "Easy",
+    "totalQuestions": 8,
+    "marksPerQuestion": 2,
+    "negativeMarks": 0.5,
+    "subjects": [
+      { "name": "Reasoning", "questions": 2 },
+      { "name": "Mathematics", "questions": 2 },
+      { "name": "English", "questions": 2 },
+      { "name": "GK", "questions": 2 }
+    ]
+  }
+]

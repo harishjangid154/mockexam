@@ -1,0 +1,56 @@
+@import "tailwindcss";
+@import "katex/dist/katex.min.css";
+
+:root {
+  color-scheme: dark;
+  --background: 222 20% 6%;
+  --foreground: 210 40% 96%;
+  --card: 222 18% 9%;
+  --card-foreground: 210 40% 96%;
+  --popover: 222 18% 9%;
+  --popover-foreground: 210 40% 96%;
+  --primary: 167 72% 44%;
+  --primary-foreground: 210 40% 4%;
+  --secondary: 217 18% 17%;
+  --secondary-foreground: 210 40% 96%;
+  --muted: 217 16% 18%;
+  --muted-foreground: 215 16% 68%;
+  --accent: 37 91% 55%;
+  --accent-foreground: 222 20% 8%;
+  --destructive: 0 72% 52%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217 16% 22%;
+  --input: 217 16% 22%;
+  --ring: 167 72% 44%;
+  --radius: 0.5rem;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 15% 0%, rgba(20, 184, 166, 0.12), transparent 28rem),
+    radial-gradient(circle at 85% 18%, rgba(245, 158, 11, 0.09), transparent 24rem),
+    hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.exam-grid {
+  display: grid;
+  grid-template-columns: 18rem minmax(0, 1fr);
+}
+
+@media (max-width: 900px) {
+  .exam-grid {
+    grid-template-columns: 1fr;
+  }
+}
